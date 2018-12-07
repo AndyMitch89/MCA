@@ -15,27 +15,12 @@
 
     <div id="content">
       <!-- ADD YOUR HTML CONTENT HERE! -->
-      <h1>Hans Zimmer's Day One</h1>
-      <h2>Metadata</h2>
-      <p id="meta"></p>
-
-    </div>
-
-     <!-- **** DO NO EDIT BELOW THIS LINE **** -->
-    <!-- * **** **** **** **** **** **** **** -->
-	<div><h2>Score</h2></div>
-	<div id="controls">
-	<button id="prev">&lt;</button>
-	<button id="next">&gt;</button>
-	</div>
-    <div id="score">
-      <!-- THIS IS WHERE THE SCORE GOES AUTOMATICALLY -->
-    </div>
+      </div>
 	<div id="analysis">
 		<h2>Analysis</h2>
 		<h3>Music21</h3>
-		<img src="images\index what are going to do graph.png" alt="What Are You Going To Do When You Are Not Saving The Worlde Music21 Histogram" width="400" height="400">
-		<img src="images\index What are you going to do octave.png" alt="What Are You Going To Do When You Are Not Saving The World Music21 Pitch Roll" width="600" height="360">
+		<img src="images\index graph.png" alt="Day One Music21 Histogram" width="400" height="400">
+		<img src="images\index octave.png" alt="Day One Music21 Pitch Roll" width="600" height="360">
 		<p>
 		<h3>jSymbolic</h3>
 		<table>
@@ -76,8 +61,18 @@
 		</table>
 		</p>
 	</div>
+    <!-- **** DO NO EDIT BELOW THIS LINE **** -->
+    <!-- * **** **** **** **** **** **** **** -->
+	<div><h2>Score</h2></div>
+	<div id="controls">
+	<button id="prev">&lt;</button>
+	<button id="next">&gt;</button>
+	</div>
+    <div id="score">
+      <!-- THIS IS WHERE THE SCORE GOES AUTOMATICALLY -->
+    </div>
     <!-- THIS CALLS THE SCRIPT THAT GETS THE MEI SCORE -->
-   <script src="js/day_one.js"></script>
+   <script src="js/Day_one.js"></script>
     <script>
       var xhr = new XMLHttpRequest()
       xhr.open('GET', 'data/day_one.mei') // <-- change this to the right file
@@ -91,7 +86,7 @@
           if (xhr.status === OK) {
             var parser = new DOMParser()
             var meiDoc = parser.parseFromString(xhr.responseText,"text/xml")
-            /* If your element has an authURI attribute, copy the folloiwng line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
+           /* If your element has an authURI attribute, copy the folloiwng line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
             document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='MY-XML-ID']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='MY-XML-ID']").textContent + "</p></a>"
            */
 			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='t-3']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='t-3']").textContent + "</p></a>"
