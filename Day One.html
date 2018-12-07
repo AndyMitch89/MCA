@@ -15,7 +15,22 @@
 
     <div id="content">
       <!-- ADD YOUR HTML CONTENT HERE! -->
-      </div>
+      <h1>Hans Zimmer's Day One</h1>
+      <h2>Metadata</h2>
+      <p id="meta"></p>
+
+    </div>
+
+     <!-- **** DO NO EDIT BELOW THIS LINE **** -->
+    <!-- * **** **** **** **** **** **** **** -->
+	<div><h2>Score</h2></div>
+	<div id="controls">
+	<button id="prev">&lt;</button>
+	<button id="next">&gt;</button>
+	</div>
+    <div id="score">
+      <!-- THIS IS WHERE THE SCORE GOES AUTOMATICALLY -->
+    </div>
 	<div id="analysis">
 		<h2>Analysis</h2>
 		<h3>Music21</h3>
@@ -35,13 +50,13 @@
 				<th>Prevalence_of_Most_Common_Pitch</th>
 				</tr></thead>
 				<tbody><tr>
-				<td align="left"> 12</td>
-				<td align="left"> 7</td>
-				<td align="left"> 23</td>
-				<td align="left"> 66</td>
-				<td align="left"> 64</td>
-				<td align="left"> 5.544</td>
-				<td align="left"> 34</td>
+				<td align="left">34</td>
+				<td align="left"> 10</td>
+				<td align="left"> 60</td>
+				<td align="left"> 1</td>
+				<td align="left"> 48</td>
+				<td align="left"> 2.817</td>
+				<td align="left"> 36</td>
 				<td align="left"> 0</td>
 				</tr></tbody>
 		</table>
@@ -49,30 +64,20 @@
 			<thead><tr>
 				<th>Prevalence_of_Most_Common_Pitch_Class</th>
 				<th>Interval_Between_Most_Prevalent_Pitches</th>
-				<th>Pitch_Varation</th>
-				<th>Most_Common_Medodic Interval</th>
+				<th>Interval_Between_Most_Prevalent_Pitch_Classes</th>
+				<th>Pitch_Variability</th>
 				</tr></thead>
 				<tbody><tr>
 				<td align="left"> 0.3271</td>
-				<td align="left"> 7</td>
-				<td align="left"> 4.599</td>
-				<td align="left"> 7</td>
+				<td align="left"> 0</td>
+				<td align="left"> 12</td>
+				<td align="left"> 13.66</td>
 				</tr></tbody>
 		</table>
 		</p>
 	</div>
-    <!-- **** DO NO EDIT BELOW THIS LINE **** -->
-    <!-- * **** **** **** **** **** **** **** -->
-	<div><h2>Score</h2></div>
-	<div id="controls">
-	<button id="prev">&lt;</button>
-	<button id="next">&gt;</button>
-	</div>
-    <div id="score">
-      <!-- THIS IS WHERE THE SCORE GOES AUTOMATICALLY -->
-    </div>
     <!-- THIS CALLS THE SCRIPT THAT GETS THE MEI SCORE -->
-   <script src="js/Day_one.js"></script>
+   <script src="js/day_one.js"></script>
     <script>
       var xhr = new XMLHttpRequest()
       xhr.open('GET', 'data/day_one.mei') // <-- change this to the right file
@@ -86,7 +91,7 @@
           if (xhr.status === OK) {
             var parser = new DOMParser()
             var meiDoc = parser.parseFromString(xhr.responseText,"text/xml")
-           /* If your element has an authURI attribute, copy the folloiwng line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
+            /* If your element has an authURI attribute, copy the folloiwng line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
             document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='MY-XML-ID']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='MY-XML-ID']").textContent + "</p></a>"
            */
 			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='t-3']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='t-3']").textContent + "</p></a>"

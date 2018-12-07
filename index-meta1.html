@@ -15,13 +15,12 @@
 
     <div id="content">
       <!-- ADD YOUR HTML CONTENT HERE! -->
-      <h1>Hans Zimmer's Day One</h1>
+     <h1>Hans Zimmer's Day One</h1>
       <h2>Metadata</h2>
       <p id="meta"></p>
 
     </div>
-
-     <!-- **** DO NO EDIT BELOW THIS LINE **** -->
+	 <!-- **** DO NO EDIT BELOW THIS LINE **** -->
     <!-- * **** **** **** **** **** **** **** -->
 	<div><h2>Score</h2></div>
 	<div id="controls">
@@ -30,7 +29,6 @@
 	</div>
     <div id="score">
       <!-- THIS IS WHERE THE SCORE GOES AUTOMATICALLY -->
-    </div>
 	<div id="analysis">
 		<h2>Analysis</h2>
 		<h3>Music21</h3>
@@ -77,10 +75,10 @@
 		</p>
 	</div>
     <!-- THIS CALLS THE SCRIPT THAT GETS THE MEI SCORE -->
-   <script src="js/day_one.js"></script>
+   <script src="js/Day_one.js"></script>
     <script>
       var xhr = new XMLHttpRequest()
-      xhr.open('GET', 'data/day_one.mei') // <-- change this to the right file
+      xhr.open('GET', 'data/Day_one.mei') // <-- change this to the right file
       xhr.send(null)
 
       /* Deal with the response */
@@ -94,15 +92,9 @@
             /* If your element has an authURI attribute, copy the folloiwng line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
             document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='MY-XML-ID']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='MY-XML-ID']").textContent + "</p></a>"
            */
-			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='t-3']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='t-3']").textContent + "</p></a>"
-			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='e-2']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='e-2']").textContent + "</p></a>"
-			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='c-2']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='c-2']").textContent + "</p></a>"
-			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='a-1']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='a-1']").textContent + "</p></a>"
-			document.querySelector("#meta").innerHTML += "<a href=\"" + meiDoc.querySelector("[*|id='userestrict']").getAttribute('authURI') +"\"><p>" + meiDoc.querySelector("[*|id='userestrict']").textContent + "</p></a>"
            /* If your element does not have an authURI attribute, copy the following line, being sure to replace the "MY-XML-ID" with your element's actual xml:id.
             document.querySelector("#meta").innerHTML += "<p>" + meiDoc.querySelector("[*|id='m-8']").textContent + "</p>"
             */
-			document.querySelector("#meta").innerHTML += "<p>" + meiDoc.querySelector("[*|id='t-2']").textContent + "</p>"
           }
         }
       }
