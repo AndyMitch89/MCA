@@ -1,6 +1,35 @@
 /* Add your own CSS rules here */
 h1 {
   text-align: center;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-width: 1%; 
+}
+
+h2 {
+	text-align: left;
+}
+
+h3 {
+	text-align: left;
+}
+
+h4 {
+	text-align: left;
+}
+
+h5 {
+	text-align: left;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+table {
+	width: 25%;
+	height: 25%;
 }
 
 g[class='note'] {
@@ -12,5 +41,4 @@ g[class='note'] {
 }
 
 #controls {
-  float: right;
-}
+float: right;
